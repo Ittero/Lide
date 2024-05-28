@@ -1,0 +1,272 @@
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: auto;
+    font-family: Arial, sans-serif, 'Open Sans', sans-serif, "Source Sans Pro";
+    min-width: 100%;
+    scroll-behavior: initial;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #383838;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.4s, border-radius 0.4s;
+}
+
+.navbar ul li a:hover {
+    background-color: #949393;
+    border-radius: 6px;
+}
+.active {
+    background-color: aliceblue;
+}
+
+.wrap-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #383838;
+    border-radius: 0 0 18px 18px;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url(../images/backround-header.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 2px 16px gray;
+    margin-top: 45px;
+}
+
+.wrap-header > * {
+    position: relative;
+}
+
+.avatar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    flex: 2;
+    text-align: left;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.student-photo {
+    width: 170px;
+    height: 220px;
+    border-radius: 10%;
+}
+
+.student-info {
+    margin-bottom: 10px;
+}
+
+.student-name {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.faculty {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.institution-info {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo-tntu, .logo-fis {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-kaf {
+    width: 180px;
+    height: 180px;
+}
+
+/* **********MAIN************** */
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #f4f4f4;
+    margin-top: 20px; 
+}
+
+.wraper {
+    margin-top: 20px;
+    display: flex;
+    padding: 20px;
+    width: 800px;
+    background-color: #383838;
+    border-radius: 18px;
+    box-shadow: 2px 2px 18px gray;
+}
+
+.left-column {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.right-column {
+    flex: 2;
+}
+
+.section {
+    margin-bottom: 20px;
+    border: 1px solid #949393;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #2f2f2f;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 30px; /* Space for button */
+}
+
+.hobbies, .interesting-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.hobby-item, .interesting-item {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    padding-bottom: 30px; /* Space for button */
+    border-bottom: 1px solid #727272;
+}
+
+.detail-button {
+    background-color: #1f1e1e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+    width: 100px; /* Uniform size */
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+.input-text{
+    width: 245px;
+}
+
+.detail-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.detail-button:hover {
+    background-color: #949393;
+}
+
+.tokyo {
+    margin: 5px;
+    border: 1px solid #949393;
+    border-radius: 6px;
+    width: auto;
+    height: 500px;
+}
+
+.kripak {
+    width: 356px;
+    border: 1px solid #949393;
+    border-radius: 6px;
+    height: 200px;
+    margin: 5px;
+}
+
+/* ******FOOTER *********** */
+
+.wrap-footer {
+    margin-top: 20px;
+    height: 100px;
+    background-color: #1f1e1e;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 1px -2px 13px gray;
+}
+
+.prodaction {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 20px;
+}

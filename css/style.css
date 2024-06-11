@@ -317,7 +317,6 @@ footer{
 }
 
 
-
 /* ******FOOTER *********** */
 
 .wrap-footer {
@@ -334,6 +333,209 @@ footer{
     text-align: center;
     padding: 20px;
 }
+/* Додаткові стилі для адаптивної градки */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #383838;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Медіа-запит для адаптивної градки */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+/* Стилі для grid-елементів */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #383838;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+/* Стилі для grid-елементів */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #383838;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Основні стилі банера */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Висота для середнього екрану */
+    background-image: url('../images/fon.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 20px 0;
+}
+
+.banner-content {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Стилі для тексту */
+.banner-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.animated-text1 {
+    animation-name: slidein-left;
+}
+
+.animated-text2 {
+    animation-name: slidein-right;
+}
+
+.animated-text3 {
+    animation-name: fadein;
+    margin-bottom: 20px;
+
+}
+
+/* Стилі для зображень */
+.banner-image {
+    width: 100px;
+    height: auto;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.animated-image1 {
+    animation-name: bounce;
+}
+
+.animated-image2 {
+    animation-name: rotate;
+    border-radius: 50px;
+}
+
+.animated-image3 {
+    animation-name: shake;
+}
+/* Віджети */
+iframe, .twitter-timeline, #weather-widget {
+    margin: 20px auto;
+    display: block;
+    max-width: 100%;
+    width: 300px;
+}
+
+/* Стилізація секцій */
+.main-content .section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Анімації */
+@keyframes slidein-left {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slidein-right {
+    0% { transform: translateX(100%); opacity: 0; }
+    50% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+}
+
+/* Адаптивні стилі для різних розмірів екрану */
+@media (max-width: 1200px) {
+    .banner {
+        height: 250px; /* Висота для великих екранів */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 200px; /* Висота для середніх екранів */
+    }
+    .banner-text {
+        font-size: 20px;
+    }
+    .banner-image {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 150px; /* Висота для маленьких екранів */
+    }
+    .banner-text {
+        font-size: 16px;
+    }
+    .banner-image {
+        width: 60px;
+    }
+}
+
 
 /* ************* MEDIA ************* */
 @media(max-width: 930px) {
@@ -364,11 +566,12 @@ footer{
         margin-bottom: 20px;
     }
     .right-column {
-        width: 100%;
+        flex: 2;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end; /* Цей рядок розміщує елементи справа */
     }
+    
     .tokyo, .kripak {
         width: 80%;
         height: auto;

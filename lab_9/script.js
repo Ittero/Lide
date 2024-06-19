@@ -46,7 +46,6 @@ function checkEmail() {
     var email = document.getElementById('inputCheckEmail').value;
     var result = "Це коректна електронна адреса";
 
-    // Регулярний вираз для перевірки електронної адреси
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
@@ -133,40 +132,34 @@ function getDayOfWeekInFuture(years, inputDate) {
     var result = `Через ${years} роки, ${getFormattedDate(futureDate)}`;
     return result;
 }
+
 function calculateTimeDifference() {
     var hour1 = parseInt(document.getElementById('hour1').value);
     var minute1 = parseInt(document.getElementById('minute1').value);
     var hour2 = parseInt(document.getElementById('hour2').value);
     var minute2 = parseInt(document.getElementById('minute2').value);
 
-    // Перевірка введених значень
     if (isNaN(hour1) || isNaN(minute1) || isNaN(hour2) || isNaN(minute2)) {
         document.getElementById('resultTimeDifference').innerText = "Будь ласка, введіть коректні значення для годин і хвилин.";
         return;
     }
 
-    // Переведення годин і хвилин у секунди
     var time1InSeconds = hour1 * 3600 + minute1 * 60;
     var time2InSeconds = hour2 * 3600 + minute2 * 60;
 
-    // Обчислення різниці в секундах
     var differenceInSeconds = Math.abs(time1InSeconds - time2InSeconds);
 
-    // Переведення різниці у години і хвилини
     var hoursDifference = Math.floor(differenceInSeconds / 3600);
     var minutesDifference = Math.floor((differenceInSeconds % 3600) / 60);
 
-    // Форматування результату
-    var result = `Різниця між часами: ${hoursDifference} годин ${minutesDifference} хвилин.`;
+    var result = `Різниця між часом: ${hoursDifference} годин ${minutesDifference} хвилин.`;
 
-    // Виведення результату на сторінку
     document.getElementById('resultTimeDifference').innerText = result;
 }
 
 function checkIfNumber() {
     var inputValue = document.getElementById('inputNumber').value;
 
-    // Перевірка, чи можна конвертувати введене значення у число
     if (!isNaN(parseFloat(inputValue)) && isFinite(inputValue)) {
         document.getElementById('resultNumberCheck').innerText = "Введено число.";
     } else {

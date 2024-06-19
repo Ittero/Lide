@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нові Функції</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="../index.html">Головна</a></li>
+        </ul>
+        <div class="menu-burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="wraper">
+            <div class="section">
+                <div class="section-title">Перевірка дійсних чисел</div>
+                <input type="text" id="inputCheckDigits" class="input-text" placeholder="Введіть значення">
+                <button class="detail-button" onclick="checkDigits()">Виконати</button>
+                <div id="resultCheckDigits"></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Біжуча стрічка</div>
+                <div id="marqueeText" class="marquee"><div>Протягом цього - усе стає не таким</div></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Видалення послідовних пробілів</div>
+                <input type="text" id="inputRemoveSpaces" class="input-text" placeholder="Введіть текст">
+                <button class="detail-button" onclick="removeSpaces()">Виконати</button>
+                <div id="resultRemoveSpaces"></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Перевірка електронної адреси</div>
+                <input type="text" id="inputCheckEmail" class="input-text" placeholder="Введіть email">
+                <button class="detail-button" onclick="checkEmail()">Виконати</button>
+                <div id="resultCheckEmail"></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Поточна дата</div>
+                <button class="detail-button" onclick="showCurrentDate()">Показати дату</button>
+                <div id="resultCurrentDate"></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">День, коли ви народились</div>
+                <input type="date" id="inputBirthday" class="input-text">
+                <button class="detail-button" onclick="showBirthDayOfWeek()">Показати</button>
+                <div id="resultBirthDayOfWeek"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">День тижня n років тому</div>
+                <input type="date" id="inputDate" class="input-text">
+                <button class="detail-button" onclick="getDayOfWeekYearsAgo()">Виконати</button>
+                <div id="resultDayOfWeekYearsAgo"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">День тижня через 3 роки</div>
+                <input type="date" id="inputFutureDate" class="input-text">
+                <button class="detail-button" onclick="showDayOfWeekInFuture()">Виконати</button>
+                <div id="resultDayOfWeekInFuture"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Обчислення інтервалу часу</div>
+                <div class="result-time">
+                    <div class="one-group">
+                        <label for="hour1">Година 1:</label>
+                        <input type="number" id="hour1" class="input-time" min="0" max="23" step="1">
+                        <label for="minute1">Хвилина 1:</label>
+                        <input type="number" id="minute1" class="input-time" min="0" max="59" step="1">
+                    </div>
+                    <br>
+                    <two-group>
+                        <label for="hour2">Година 2:</label>
+                        <input type="number" id="hour2" class="input-time" min="0" max="23" step="1">
+                        <label for="minute2">Хвилина 2:</label>
+                        <input type="number" id="minute2" class="input-time" min="0" max="59" step="1">
+                    </two-group>
+                </div>
+                <br>
+                <button class="detail-button" onclick="calculateTimeDifference()">Обчислити</button>
+                <div id="resultTimeDifference"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Перевірка рядка на число</div>
+                <input type="text" id="inputNumber" class="input-text" placeholder="Введіть число">
+                <button class="detail-button" onclick="checkIfNumber()">Перевірити</button>
+                <div id="resultNumberCheck"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Число в різних системах числення</div>
+                <input type="date" id="inputDateCalc" class="input-text">
+                <button class="detail-button" onclick="calculateNumber()">Обчислити</button>
+                <div id="resultNumberSystems"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Обчислення гіпотенузи</div>
+                <input type="number" id="inputSideA" class="input-text" placeholder="Введіть довжину катета A">
+                <input type="number" id="inputSideB" class="input-text" placeholder="Введіть довжину катета B">
+                <button class="detail-button" onclick="calculateHypotenuse()">Обчислити гіпотенузу</button>
+                <div id="resultHypotenuse"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <section class="wrap-footer">
+            <div class="prodaction">
+                <h1>Виробництво Lide
+                    <br>(Буряк Денис)
+                </h1>
+            </div>
+        </section>
+    </footer>
+
+    <script src="/lab_9/script.js"></script>
+</body>
+</html>

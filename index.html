@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lide</title>
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
-<body>
+<body oncontextmenu="showCustomMenu(true,event.clientX, event.clientY); return false;" onclick="showCustomMenu(false, event.clientX, event.clientY); return false;">
+    <div id="custommenu">
+        <div style="background-color:  rgb(73, 63, 67); color: rgb(255, 255, 255); border-radius: 8px; font-size: 10pt;" onclick="doAction('copy');">Скопіювати вміст документа</div>
+        <div style="background-color:  rgb(73, 63, 67); color:  rgb(255, 255, 255); border-radius: 8px; font-size: 10pt;" onclick="doAction('close');">Закрити вікно</div>
+        <div style="background-color:  rgb(73, 63, 67); color: rgb(255, 255, 255); border-radius: 8px; font-size: 10pt;" onclick="doAction('fontIncrease');">Збільшити шрифт</div>
+        <div style="background-color:  rgb(73, 63, 67); color: rgb(255, 255, 255); border-radius: 8px; font-size: 10pt;" onclick="doAction('fontDecrease');">Зменшити шрифт</div>
+        <div style="background-color:  rgb(73, 63, 67); color: rgb(255, 255, 255); border-radius: 8px; font-size: 10pt;" onclick="doAction('changeBkg');">Змінити фон</div>
+    </div>
     <nav class="navbar">
         <div class="menu-burger">
             <div></div>
@@ -25,15 +33,14 @@
     <header class="header">
         <section class="wrap-header">
             <div class="avatar"> 
-                <img src="images/other.jpg" alt="Фото студента" class="student-photo">
+                <img src="images/other.jpg" alt="Фото студента" class="student-photo" onmouseover="this.src='images/Sasuke.jpg'" onmouseout="this.src='images/other.jpg'">
             </div>
             <div class="center">
                 <div class="student-info">
                     <h1 class="student-name"><i>Буряк Денис Васильович</i></h1>
                     <p class="faculty">Факультет комп'ютерно-інформаційних систем і програмної інженерії (ФІС)</p>
                 </div>
-                <p class="institution-info">Тернопільський Національний Технічний Університет ім. Пулюя
-                </p>
+                <p class="institution-info">Тернопільський Національний Технічний Університет ім. Пулюя</p>
             </div>
             <div class="logos">
                 <img src="./images/tntu-logo.png" alt="Логотип 1" class="logo-tntu">
@@ -92,6 +99,10 @@
                         <a href="interesting.html" class="detail-link"><button class="detail-button">Детальніше</button></a>
                     </div>
                 </div>
+                <div class="input-container">
+                    <label for="number-input">Введіть число:</label>
+                    <input type="text" id="number-input" onkeypress="return checkSymbol(event)">
+                </div>
             </div>
             <div class="grid-item">
                 <div class="right-column">
@@ -112,29 +123,27 @@
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7AbqgE05nFl9qY4FRUiq2p?utm_source=generator" width="40%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> 
                     <blockquote class="twitter-tweet" data-lang="uk" data-theme="dark"><p lang="zxx" dir="ltr"><a href="https://t.co/QyRShMy1QB">pic.twitter.com/QyRShMy1QB</a></p>&mdash; out of context dogs (@contextdogs) <a href="https://twitter.com/contextdogs/status/1800196203789070590?ref_src=twsrc%5Etfw">10 червня 2024 р.</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <a class="weatherwidget-io" href="https://forecast7.com/uk/49d5525d59/ternopil/" data-label_1="TERNOPIL" data-label_2="WEATHER" data-font="Trebuchet MS" data-theme="blue-mountains" >TERNOPIL WEATHER</a>
+                    
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <section class="wrap-footer">
-            <div class="prodaction">
-                <h1>Виробництво Lide
-                    <br>(Буряк Денис)
-                </h1>
-            </div>
-        </section>
+    <footer class="footer">
+        <p>&copy; 2024 by Buriachok. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js">
+    <script src="script.js"></script>
+    <script>
         !function(d,s,id){
             var js,fjs=d.getElementsByTagName(s)[0];
             if(!d.getElementById(id)){
                 js=d.createElement(s);
-                js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+                js.id=id;
+                js.src='https://weatherwidget.io/js/widget.min.js';
                 fjs.parentNode.insertBefore(js,fjs);
-            }}(document,'script','weatherwidget-io-js');
-        </script>
+            }
+        }(document,'script','weatherwidget-io-js');
+    </script>
 </body>
 </html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нові Функції</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="../index.html">Головна</a></li>
+        </ul>
+        <div class="menu-burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="wraper">
+            <h1>Перевірка Введення Паролю</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td>Введіть пароль:</td>
+                        <td>
+                            <input type="password" id="pwd1" onkeyup="editPassword(this.id, 'message', 8, 16);">
+                        </td>
+                        <td>
+                            <font id="message" style="font-size: 8pt;"></font>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            
+            <h1 style="margin-top: 20px;">Масштабування Карти Посилань</h1>
+            <img id="mapImage" src="/images/other.jpg" usemap="#map" width="200" height="300">
+            <map name="map">
+                <area shape="rect" coords="34,44,270,350" href="https://example.com/rect" alt="Rectangle">
+                <area shape="circle" coords="290,172,75" href="https://example.com/circle" alt="Circle">
+                <area shape="poly" coords="377,300,411,376,467,379,487,323,434,300" href="https://example.com/poly" alt="Polygon">
+            </map>
+            <br>
+            <button onclick="zoomMap(1.2, 'mapImage')">Збільшити на 20%</button>
+            <button onclick="zoomMap(0.8, 'mapImage')">Зменшити на 20%</button>
+
+            <h1 style="margin-top: 20px;">Виберіть Район та Вулицю Львова</h1>
+            <form class="street">
+                <label for="districts">Райони:</label>
+                <select id="districts" onchange="showStreets(this.selectedIndex, 'streets');">
+                    <option>Виберіть район</option>
+                    <option>Галицький</option>
+                    <option>Франківський</option>
+                    <option>Личаківський</option>
+                    <option>Сихівський</option>
+                    <option>Шевченківський</option>
+                </select>
+
+                <label for="streets">Вулиці:</label>
+                <select id="streets" style="visibility:hidden;">    
+                    <option></option>
+                </select>
+            </form>
+
+            <h1 style="margin-top: 20px;">Сума Вибраних Товарів</h1>
+            <table style="border: 1" cellspacing="0" cellpadding="5" bordercolor="#000000">
+                <tr>
+                    <td></td>
+                    <td>Назва товару</td>
+                    <td>Виробник</td>
+                    <td>Ціна</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="98" onchange="updateTotal()"> </td>
+                    <td>Монітори CRT</td>
+                    <td>LG</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="132" onchange="updateTotal()"> </td>
+                    <td>Монітори CRT</td>
+                    <td>Samsung</td>
+                    <td>132</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="419" onchange="updateTotal()"> </td>
+                    <td>Монітори TFT</td>
+                    <td>Samsung</td>
+                    <td>419</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="68" onchange="updateTotal()"> </td>
+                    <td>HDD</td>
+                    <td>Seagate</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="161" onchange="updateTotal()"> </td>
+                    <td>HDD</td>
+                    <td>Hitachi</td>
+                    <td>161</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="14" onchange="updateTotal()"> </td>
+                    <td>CD ROM</td>
+                    <td>LG</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="16" onchange="updateTotal()"> </td>
+                    <td>CD ROM</td>
+                    <td>Asus</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="goods" value="32" onchange="updateTotal()"> </td>
+                    <td>DVD ROM</td>
+                    <td>Toshiba</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">Сума:&nbsp;<font id="price"></font></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <section class="wrap-footer">
+            <div class="prodaction">
+                <h1>Виробництво Lide
+                    <br>(Буряк Денис)
+                </h1>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        var streetsGal = ['Галицька', 'Ставропігійська', 'Краківська', 'Театральна', 'Вірменська'];
+        var streetsShev = ['Чорновола', 'Остряниці', 'Замарстинівська', 'Топольна', 'Варшавська'];
+        var streetsFran = ['Сахарова', 'Наукова', 'Княгині Ольги', 'В.Великого'];
+        var streetsLych = ['Личаківська', 'Пекарська', 'Нечуя-Левицького', 'Зелена'];
+        var streetsSykh = ['Хоткевича', 'Червоної Калини'];
+
+        var streetsAll = [null, streetsGal.sort(), streetsFran.sort(), streetsLych.sort(), streetsSykh.sort(), streetsShev.sort()];
+
+        function showStreets(regionIndex, selectId) {
+            var streetsSelect = document.getElementById(selectId);
+            clearSelect(streetsSelect);
+            if (regionIndex <= 0) {
+                streetsSelect.style.visibility = 'hidden';
+                return;
+            }
+
+            streetsSelect.style.visibility = 'visible';
+
+            for (var i = 0; i < streetsAll[regionIndex].length; i++) {
+                var newStreet = new Option(streetsAll[regionIndex][i], streetsAll[regionIndex][i]);
+                streetsSelect.add(newStreet, i);
+            }
+        }
+
+        function clearSelect(selectObject) {
+            while (selectObject.length) {
+                selectObject.remove(0);
+            }
+        }
+
+        function editPassword(password, messageId, minLength, maxLength) {
+            var password = document.getElementById(password);
+            var message = document.getElementById(messageId);
+        
+            if (password.value.length < minLength) {
+                message.innerText = 'Надійний пароль повинен містити не менше ' + minLength + ' символів';
+                message.style.color = '#ff0000';
+            } else if (password.value.length > maxLength) {
+                message.innerText = 'Довжина паролю не повинна перевищувати ' + maxLength + ' символів';
+                message.style.color = '#ff0000';
+            } else {
+                message.innerText = 'Ok';
+                message.style.color = '#00cc00';
+            }
+        }
+        
+        function zoomMap(zoom, imageId) {
+            var karta = document.getElementById(imageId);
+            var areas = document.getElementsByName("map")[0].areas;
+        
+            for (var i = 0; i < areas.length; i++) {
+                var coords = (areas[i].coords).split(',');
+                for (var j = 0; j < coords.length; j++) {
+                    coords[j] = Math.round(coords[j] * zoom);
+                }
+                areas[i].coords = coords.join(',');
+            }
+        
+            karta.width = Math.round((karta.width) * zoom);
+            karta.height = Math.round((karta.height) * zoom);
+        }
+
+        function getTotalPrice() {
+   var sum = 0;
+   var boxes = document.getElementsByName('goods');
+   var selectedCount = 0;
+
+   for (var i = 0; i < boxes.length; i++) {
+       if (boxes[i].checked) {
+           sum += parseFloat(boxes[i].value);
+           selectedCount++;
+       }
+   }
+
+   document.getElementById('price').innerText = selectedCount < 5 ? 'Вибрано замало прапорців (мінімум 5)' : sum;
+   displayMessage(selectedCount, sum);
+}
+
+function assignFunctionToCheckboxes() {
+   var boxes = document.getElementsByName('goods');
+
+   for (var i = 0; i < boxes.length; i++) {
+       boxes[i].onclick = getTotalPrice;
+   }
+}
+
+function displayMessage(selectedCount, sum) {
+   var messageElement = document.getElementById('price');
+
+   if (selectedCount < 5) {
+       messageElement.innerText = 'Вибрано замало прапорців (мінімум 5)';
+       messageElement.style.color = "red";
+   } else {
+       messageElement.innerText = sum; // Use the passed sum parameter
+       messageElement.style.color = "green";
+   }
+}
+
+// Викликати цю функцію при завантаженні сторінки
+assignFunctionToCheckboxes();
+
+    </script>
+</body>
+</html>

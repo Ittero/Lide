@@ -614,3 +614,32 @@ iframe, .twitter-timeline, #weather-widget {
         display: flex;
     }
 }
+
+#number-input{
+    width: 60%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#custommenu {
+    width: 250px;
+    height: 140px;
+    visibility: hidden;
+    background-color: rgb(73, 63, 67);;
+    border: 1px solid rgb(124, 93, 106);
+    position: absolute;
+    border-radius: 8px;
+    z-index: 1000;
+    
+}
+#custommenu div {
+    background-color:rgb(73, 63, 67);;
+    color: rgb(194, 194, 255);
+    font-size: 10pt;
+    padding: 5px;
+    cursor: pointer;
+}
+#custommenu div:hover {
+    background-color: rgb(152, 137, 158);
+}

@@ -82,7 +82,6 @@ function hideRows() {
     var table = document.getElementById('myTable');
     var rows = table.getElementsByTagName('tr');
     
-    // Приховуємо перший і третій рядки
     rows[0].style.display = 'none'; // Перший рядок
     rows[2].style.visibility = 'hidden'; // Третій рядок
 }

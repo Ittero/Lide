@@ -69,3 +69,26 @@ function checkEmail() {
 
     document.getElementById('resultCheckEmail').innerText = result;
 }
+
+function changePasswordStyle() {
+    var passwordInput = document.getElementById('password');
+    passwordInput.style.backgroundColor = 'red';
+    passwordInput.style.color = 'white';
+    passwordInput.style.fontSize = '10pt';
+    passwordInput.style.height = '28px';
+}
+
+function hideRows() {
+    var table = document.getElementById('myTable');
+    var rows = table.getElementsByTagName('tr');
+    
+    // Приховуємо перший і третій рядки
+    rows[0].style.display = 'none'; // Перший рядок
+    rows[2].style.visibility = 'hidden'; // Третій рядок
+}
+
+function removeHTMLComments() {
+    var input = document.getElementById('editor').value;
+    var output = input.replace(/<!--[\s\S]*?-->/g, '');
+    document.getElementById('output').innerHTML = output;
+}

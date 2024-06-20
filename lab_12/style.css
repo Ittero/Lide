@@ -30,7 +30,7 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
 }
-#resultCheckDigits, #resultNumberSystems, #resultNumberCheck, #marqueeText, #resultCurrentDate, #resultRemoveSpaces, #resultDayOfWeek, #resultCheckEmail, #resultDayOfWeekYearsAgo, #resultDayOfWeekInFuture, #resultBirthDayOfWeek, #resultHypotenuse {
+#resultCheckDigits, #output, #resultNumberSystems, #resultNumberCheck, #marqueeText, #resultCurrentDate, #resultRemoveSpaces, #resultDayOfWeek, #resultCheckEmail, #resultDayOfWeekYearsAgo, #resultDayOfWeekInFuture, #resultBirthDayOfWeek, #resultHypotenuse {
     text-align: left;
     width: 80%;
     margin-top: 10px;
@@ -39,4 +39,26 @@ button:hover {
     background-color: rgb(89, 81, 103);
     border-radius: 8px;
     text-align: center;
+}
+
+#password{
+    width: 600px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
 }

@@ -46,7 +46,7 @@ function clearTextFromHTMLTags() {
     var clearedText = editorContent.replace(tagTemplate, '');
     document.getElementById('editor').value = clearedText;
  }
- 
+
  function checkIfNumber() {
     var inputValue = document.getElementById('inputNumber').value;
 
@@ -55,4 +55,17 @@ function clearTextFromHTMLTags() {
     } else {
         document.getElementById('resultNumberCheck').innerText = "Введено не число.";
     }
+}
+
+function checkEmail() {
+    var email = document.getElementById('inputCheckEmail').value;
+    var result = "Це коректна електронна адреса";
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        result = "Це некоректна електронна адреса";
+    }
+
+    document.getElementById('resultCheckEmail').innerText = result;
 }

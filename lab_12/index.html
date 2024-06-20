@@ -21,7 +21,6 @@
 
     <div class="main-content">
         <div class="wraper" id="functionsWrapper">
-            <!-- Перевірка номера Life -->
             <div class="section">
                 <h1>Перевірка номера Life</h1>
                 <p>Введіть номер телефону (без пробілів):</p>
@@ -29,8 +28,6 @@
                 <button onclick="checkLifePhoneNumber()">Перевірити для Life</button>
                 <p id="lifeResult"></p>
             </div>
-
-            <!-- Перевірка номера стаціонарного телефону Львів -->
             <div class="section">
                 <h1>Перевірка номера стаціонарного телефону Львів</h1>
                 <p>Введіть номер телефону (без пробілів):</p>
@@ -54,6 +51,12 @@
                 <input type="text" id="inputNumber" class="input-text" placeholder="Введіть число">
                 <button class="detail-button" onclick="checkIfNumber()">Перевірити</button>
                 <div id="resultNumberCheck"></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Перевірка електронної адреси</div>
+                <input type="text" id="inputCheckEmail" class="input-text" placeholder="Введіть email">
+                <button class="detail-button" onclick="checkEmail()">Виконати</button>
+                <div id="resultCheckEmail"></div>
             </div>
         </div>
             
